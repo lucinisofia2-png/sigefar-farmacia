@@ -23,14 +23,22 @@ SIGEFAR es un prototipo operacional de software desarrollado bajo el **Proceso U
 
 ---
 
+
 ## 📁 Estructura del Código Fuente
 ```text
 src/main/java/
-├── com.sigefar.gui/
-│   └── VentanaVenta.java          # Interfaz gráfica de usuario y punto de entrada (main)
+├── com.sigefar.model/
+│   ├── Producto.java              # Superclase abstracta del catálogo (Abstracción)
+│   ├── Medicamento.java           # Subclase con reglas farmacéuticas (Herencia y Polimorfismo)
+│   ├── ArticuloPerfumeria.java    # Subclase de perfumería y cosmética (Herencia y Polimorfismo)
+│   ├── DetalleVenta.java          # Entidad de renglón y enlace dinámico polimórfico
+│   └── Venta.java                 # Clase contenedora con colección dinámica List<DetalleVenta>
+├── com.sigefar.exception/
+│   └── FarmaciaExcepcion.java     # Excepción personalizada para control de reglas del negocio
+├── com.sigefar.main/
+│   └── GestionFarmacia.java       # Menú interactivo por consola (Scanner, while y switch)
 ├── com.sigefar.dao/
 │   ├── ConexionBD.java            # Conexión JDBC a MySQL bajo patrón Singleton
-│   └── VentaDAO.java              # Persistencia relacional y transacciones atómicas
-└── com.sigefar.model/
-    ├── Producto.java              # Entidad del catálogo e inventario
-    └── DetalleVenta.java          # Entidad de línea de comprobante y estado de entrega
+│   └── VentaDAO.java              # Persistencia relacional y control transaccional ACID
+└── com.sigefar.gui/
+    └── VentanaVenta.java          # Interfaz gráfica de escritorio en Java Swing
