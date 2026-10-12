@@ -1,0 +1,5 @@
+com\sigefar\dao\ConexionBD.class
+com\sigefar\model\Producto.class
+com\sigefar\dao\VentaDAO.class
+com\sigefar\gui\VentanaVenta.class
+com\sigefar\model\DetalleVenta.class
